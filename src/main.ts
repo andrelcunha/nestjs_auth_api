@@ -4,6 +4,7 @@ import {
   FastifyAdapter,
 } from '@nestjs/platform-fastify';
 import { AppModule } from './app.module';
+import { config } from './config';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -11,6 +12,15 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
 
-  await app.listen(3000);
+  const host = config.HOST || 'localhost';
+  const port = config.PORT ? +config.PORT : 3000;
+
+  await app.listen(port, host, (err) => {
+    console.log(`Server is running on http://${host}:${port}`);
+    if (err) {
+      console.log(err);
+      process.exit(1);
+    }
+  });
 }
 bootstrap();
