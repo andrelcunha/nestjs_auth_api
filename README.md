@@ -1,5 +1,5 @@
 
-### NestJS Authentication API
+# NestJS Authentication API
 This is a simple authentication API built with NestJS, Fastify, TypeScript, and Prisma. It uses JSON Web Tokens (JWT) for session management.
 
 ## Prerequisites
@@ -16,12 +16,12 @@ To install this project, follow these steps:
 
 Clone the repository:
 ```bash
-$ git clone <your-repository-url>
+$ git clone <nestjs_auth_api>
 ```
 
 Change into the project directory:
 ```bash
-$ cd <project-directory>
+$ cd <nestjs_auth_api>
 ```
 
 
